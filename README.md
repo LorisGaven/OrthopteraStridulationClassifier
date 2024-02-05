@@ -1,1 +1,3 @@
 # OrthopteraStridulationClassifier
+
+This project addresses the alarming decline in terrestrial insect populations, estimated at about 10% per decade. Given the urgency to understand the causes of this decline and to find methods to limit it, the team proposes an innovative approach based on the non-invasive listening of Orthoptera (crickets, grasshoppers, locusts) in Occitanie. By using the specific sound emissions of these species, the project develops an automated monitoring system to identify and track Orthoptera populations through advanced acoustic analysis and deep learning. This system relies on a dedicated acoustic database, exploring sound signal transformation parameters, such as spectrograms, for precise species discrimination.
