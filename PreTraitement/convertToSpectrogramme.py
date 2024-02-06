@@ -41,7 +41,7 @@ def convert_folder(input_folder, output_folder):
     print("Conversion completed.")
 
 # Remplacez ces chemins par vos chemins de dossiers appropriés
-input_folder = "../Dataset acoustique insectes/Sélection morceaux audio 5s/Audible/train"
-output_folder = "../Dataset acoustique insectes/Sélection morceaux audio 5s/Audible/train_spectro"
+input_folder = "../Dataset acoustique insectes/Sélection morceaux audio 5s/Audible/test"
+output_folder = "../Dataset acoustique insectes/Sélection morceaux audio 5s/Audible/test_spectro"
 
 convert_folder(input_folder, output_folder)
