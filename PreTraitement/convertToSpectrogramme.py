@@ -7,7 +7,7 @@ import numpy as np
 
 def convert_wav_to_spectrogram(wav_path, save_path):
     # Charger l'audio
-    y, sr = librosa.load(wav_path)
+    y, sr = librosa.load(wav_path, sr=None)
     # Calculer le spectrogramme
     D = librosa.amplitude_to_db(np.abs(librosa.stft(y)), ref=np.max)
     
@@ -41,7 +41,9 @@ def convert_folder(input_folder, output_folder):
     print("Conversion completed.")
 
 # Remplacez ces chemins par vos chemins de dossiers appropriés
-input_folder = "../Dataset acoustique insectes/Sélection morceaux audio 5s/Audible/test"
-output_folder = "../Dataset acoustique insectes/Sélection morceaux audio 5s/Audible/test_spectro"
+input_folder = "C:/Users/lucas/Documents/Annee_3_ENSEEIHT/Projet long/OrthopteraStridulationClassifier/Dataset acoustique insectes/Sélection morceaux audio 5s/Audible/val"
+output_folder = "C:/Users/lucas/Documents/Annee_3_ENSEEIHT/Projet long/OrthopteraStridulationClassifier/Dataset acoustique insectes/Sélection morceaux audio 5s/Audible/val_spectro"
+
+
 
 convert_folder(input_folder, output_folder)
