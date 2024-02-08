@@ -17,7 +17,7 @@ def convert_wav_to_spectrogram(wav_path, save_path):
     # Calculer le spectrogramme
     D = librosa.amplitude_to_db(np.abs(librosa.stft(y)), ref=np.max)
 
-    img = scale_minmax(D, 0, 255).astype(np.uint8)
+    img = scale_minmax(D, 0, 255).astype(np.uint8) # Mettre les valeurs entre 0 et 255
     img = np.flip(img, axis=0)
 
     im = Image.fromarray(img)
@@ -57,7 +57,7 @@ def convert_folder(input_folder, output_folder):
 input_folder = "D:\OrthopteraStridulationClassifier\Dataset acoustique insectes\Sélection soundscapes 1 min"
 output_folder = "D:\OrthopteraStridulationClassifier\Dataset acoustique insectes\Sélection soundscapes 1min spectro"
 
-input_folder = "D:\OrthopteraStridulationClassifier\Dataset acoustique insectes\Sélection morceaux audio 5s\Audible\\train"
-output_folder = "D:\OrthopteraStridulationClassifier\Dataset acoustique insectes\Sélection morceaux audio 5s\Audible\\train_spectro"
+#input_folder = "D:\OrthopteraStridulationClassifier\Dataset acoustique insectes\Sélection morceaux audio 5s\Audible\\train"
+#output_folder = "D:\OrthopteraStridulationClassifier\Dataset acoustique insectes\Sélection morceaux audio 5s\Audible\\train_spectro"
 
 convert_folder(input_folder, output_folder)
