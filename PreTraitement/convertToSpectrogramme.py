@@ -62,4 +62,7 @@ output_folder = "D:\OrthopteraStridulationClassifier\Dataset acoustique insectes
 #input_folder = "D:\OrthopteraStridulationClassifier\Dataset acoustique insectes\Sélection morceaux audio 5s\Audible\\train"
 #output_folder = "D:\OrthopteraStridulationClassifier\Dataset acoustique insectes\Sélection morceaux audio 5s\Audible\\train_spectro"
 
+#input_folder = "DataSet/Selection_morceaux_audio_5s/Audible/Audible/val"
+#output_folder = "DataSet/Selection_morceaux_audio_5s/Audible/val_spectro"
+
 convert_folder(input_folder, output_folder)
