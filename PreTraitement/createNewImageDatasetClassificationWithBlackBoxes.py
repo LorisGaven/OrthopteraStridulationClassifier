@@ -5,6 +5,8 @@ import os
 from PIL import Image
 from tqdm import tqdm
 
+based_sr = 48000
+
 def scale_minmax(X, min=0.0, max=1.0):
     X_std = (X - X.min()) / (X.max() - X.min())
     X_scaled = X_std * (max - min) + min
@@ -29,7 +31,7 @@ def go(path_df, wav_path_file, save_path, save_path_df):
         wav_path = f'{wav_path_file}\\{code_unique}_split_{chunk_initial_time}_{chunk_final_time}.wav'
         #print(wav_path)
         
-        y, sr = librosa.load(wav_path, sr=None)
+        y, sr = librosa.load(wav_path, sr=based_sr)
         D = librosa.amplitude_to_db(np.abs(librosa.stft(y)), ref=np.max)
 
         img = scale_minmax(D, 0, 255).astype(np.uint8) # Mettre les valeurs entre 0 et 255
@@ -62,6 +64,7 @@ def go(path_df, wav_path_file, save_path, save_path_df):
                 new_row["annotation_initial_time"] = max(annotation_initial_time, chunk_initial_time + i)
                 new_row["annotation_final_time"] = min(annotation_final_time, chunk_initial_time + i + 1)
                 new_row["code_unique"] = idx_image
+                new_row['sampling_rate'] = based_sr
 
                 new_rows.append(new_row)
 

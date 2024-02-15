@@ -6,6 +6,8 @@ import matplotlib.pyplot as plt
 import numpy as np
 from PIL import Image
 
+based_sr = 48000
+
 def scale_minmax(X, min=0.0, max=1.0):
     X_std = (X - X.min()) / (X.max() - X.min())
     X_scaled = X_std * (max - min) + min
@@ -13,7 +15,7 @@ def scale_minmax(X, min=0.0, max=1.0):
 
 def convert_wav_to_spectrogram(wav_path, save_path):
     # Charger l'audio
-    y, sr = librosa.load(wav_path, sr=None)
+    y, sr = librosa.load(wav_path, sr=based_sr)
     # Calculer le spectrogramme
     D = librosa.amplitude_to_db(np.abs(librosa.stft(y)), ref=np.max)
 
