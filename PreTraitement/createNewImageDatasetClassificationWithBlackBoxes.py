@@ -106,6 +106,11 @@ wav_path_file = "D:\OrthopteraStridulationClassifier\Dataset acoustique insectes
 save_path = "D:\OrthopteraStridulationClassifier\Dataset acoustique insectes\\newDatasetClassification\\train_spectro"
 save_path_df = "D:\OrthopteraStridulationClassifier\Dataset acoustique insectes\\newDatasetClassification"
 
+# path_df = "../../DataSet/CSVs_morceaux_audio_5s/Audible/test_audible_recording_chunks.csv"
+# wav_path = "../../DataSet/Selection_morceaux_audio_5s/Audible/Audible/test/"
+# save_path = "../../DataSet/newDatasetClassification/test_spectro"
+# save_path_df = "../../DataSet/newDatasetClassification/"
+
 print("Création pour train")
 go(path_df, wav_path_file, save_path, save_path_df)
 
