@@ -68,7 +68,9 @@ def convert_csv(csv_path, output_folder):
     df = pd.read_csv(csv_path)
     df['min_frequency'] = df.apply(lambda row: row['min_frequency'] / min(row['sampling_rate'] / 48000, 1) , axis=1)
     df['max_frequency'] = df.apply(lambda row: row['max_frequency'] / min(row['sampling_rate'] / 48000, 1), axis=1)
-    df.to_csv(output_folder + "test.csv")
+
+    name = csv_path.split("\\")[-1]
+    df.to_csv(f'{output_folder}\{name}')
 
 # Remplacez ces chemins par vos chemins de dossiers appropriés
 #input_folder = "D:\OrthopteraStridulationClassifier\Dataset acoustique insectes\Sélection soundscapes 1 min"
@@ -81,5 +83,6 @@ output_folder = r"D:\OrthopteraStridulationClassifier\Dataset acoustique insecte
 
 convert_folder(input_folder, output_folder)
 
+output_folder = r"D:\OrthopteraStridulationClassifier\Dataset acoustique insectes\DatasetStretch"
 csv_path = r"D:\OrthopteraStridulationClassifier\Dataset acoustique insectes\spectro1min\CSVs soundscapes 1 min\selected_soundscapes.csv"
 convert_csv(csv_path, output_folder)
