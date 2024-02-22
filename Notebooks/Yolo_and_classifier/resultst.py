@@ -6,13 +6,13 @@ from PIL import Image, ImageDraw, ImageFont
 import matplotlib.pyplot as plt
 import matplotlib.patches as patches
 
-yolo_df_path = "D:\OrthopteraStridulationClassifier\Dataset acoustique insectes\yolo_dataset_soudscape\df_yolo_predicted.csv"
-yolo_image_path = "D:\OrthopteraStridulationClassifier\Dataset acoustique insectes\yolo_dataset_soudscape\soundscape_to_5s"
+yolo_df_path = r"D:\OrthopteraStridulationClassifier\Dataset acoustique insectes\yolo_dataset_soudscape\1min_to_5s_boxes.csv"
+yolo_image_path = r"D:\OrthopteraStridulationClassifier\Dataset acoustique insectes\yolo_dataset_soudscape\soudscapes_to_5s\Selection soudscapes 1min split 5s"
 
 df_yolo = pd.read_csv(yolo_df_path)
 
-soundscape_truth_df = "D:\OrthopteraStridulationClassifier\Dataset acoustique insectes\spectro1min\CSVs soundscapes 1 min\selected_soundscapes.csv"
-soundscape_image_path = "D:\OrthopteraStridulationClassifier\Dataset acoustique insectes\spectro1min\Sélection soundscapes 1min spectro"
+soundscape_truth_df = r"D:\OrthopteraStridulationClassifier\Dataset acoustique insectes\soudscape_1min_stretch_\selected_soundscapes.csv"
+soundscape_image_path = r"D:\OrthopteraStridulationClassifier\Dataset acoustique insectes\soudscape_1min_stretch_\soudscapes"
 
 df_truth = pd.read_csv(soundscape_truth_df)
 
@@ -32,7 +32,7 @@ def image_to_compare(code_unique, save_path):
     plt.figure(figsize=(50, 10))
 
     for _, row in df_yolo_filtered.iterrows():
-        label = row["predicted_label"]
+        label = "?" #row["predicted_label"]
         x1 = row["x1"]
         x2 = row["x2"]
         y1 = row["y1"]
@@ -56,6 +56,7 @@ def image_to_compare(code_unique, save_path):
     plt.title(f'{code_unique} predicted')
     plt.tight_layout()
     plt.savefig(f'{save_path}\{code_unique}_predicted.png')
+    plt.close()
 
     plt.figure(figsize=(50, 10))
 
@@ -94,8 +95,7 @@ def image_to_compare(code_unique, save_path):
     plt.title(f'{code_unique} truth')
     plt.tight_layout()
     plt.savefig(f'{save_path}\{code_unique}_truth.png')
-    plt.clf()
-    plt.cla()
+    plt.close()
     
     print(f'{code_unique} fini')
 
