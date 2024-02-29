@@ -76,13 +76,11 @@ def convert_csv(csv_path, output_folder):
 #input_folder = "D:\OrthopteraStridulationClassifier\Dataset acoustique insectes\Sélection soundscapes 1 min"
 #output_folder = "D:\OrthopteraStridulationClassifier\Dataset acoustique insectes\Sélection soundscapes 1min spectro"
 
-input_folder = r"D:\OrthopteraStridulationClassifier\Dataset acoustique insectes\Sélection morceaux audio 5s\Audible\\train"
-
-input_folder = r"D:\OrthopteraStridulationClassifier\Dataset acoustique insectes\DatasetStretch\testTrain"
-output_folder = r"D:\OrthopteraStridulationClassifier\Dataset acoustique insectes\DatasetStretch\Train5sSpectro"
+input_folder = r"D:\OrthopteraStridulationClassifier\Dataset acoustique insectes\Sélection soundscapes 1 min"
+output_folder = r"D:\OrthopteraStridulationClassifier\Dataset acoustique insectes\soudscape_1min_stretch_\soudscapes"
 
 convert_folder(input_folder, output_folder)
 
-output_folder = r"D:\OrthopteraStridulationClassifier\Dataset acoustique insectes\DatasetStretch"
+output_folder = r"D:\OrthopteraStridulationClassifier\Dataset acoustique insectes\soudscape_1min_stretch_"
 csv_path = r"D:\OrthopteraStridulationClassifier\Dataset acoustique insectes\spectro1min\CSVs soundscapes 1 min\selected_soundscapes.csv"
 convert_csv(csv_path, output_folder)
