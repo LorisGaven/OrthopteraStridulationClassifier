@@ -76,11 +76,11 @@ def convert_csv(csv_path, output_folder):
 #input_folder = "D:\OrthopteraStridulationClassifier\Dataset acoustique insectes\Sélection soundscapes 1 min"
 #output_folder = "D:\OrthopteraStridulationClassifier\Dataset acoustique insectes\Sélection soundscapes 1min spectro"
 
-input_folder = r"D:\OrthopteraStridulationClassifier\Dataset acoustique insectes\Sélection soundscapes 1 min"
-output_folder = r"D:\OrthopteraStridulationClassifier\Dataset acoustique insectes\soudscape_1min_stretch_\soudscapes"
+input_folder = r"C:\Users\lucas\Documents\Annee_3_ENSEEIHT\Projet long\OrthopteraStridulationClassifier\Dataset acoustique insectes\Selection morceaux audio 5s\Audible\val"
+output_folder = r"C:\Users\lucas\Documents\Annee_3_ENSEEIHT\Projet long\OrthopteraStridulationClassifier\Dataset acoustique insectes\DatasetStretch\val_spectro"
 
 convert_folder(input_folder, output_folder)
 
-output_folder = r"D:\OrthopteraStridulationClassifier\Dataset acoustique insectes\soudscape_1min_stretch_"
-csv_path = r"D:\OrthopteraStridulationClassifier\Dataset acoustique insectes\spectro1min\CSVs soundscapes 1 min\selected_soundscapes.csv"
+output_folder = r"C:\Users\lucas\Documents\Annee_3_ENSEEIHT\Projet long\OrthopteraStridulationClassifier\Dataset acoustique insectes\DatasetStretch"
+csv_path = r"C:\Users\lucas\Documents\Annee_3_ENSEEIHT\Projet long\OrthopteraStridulationClassifier\Dataset acoustique insectes\CSVs morceaux audio 5s\Audible\val_audible_recording_chunks.csv"
 convert_csv(csv_path, output_folder)
